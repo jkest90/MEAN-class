@@ -1,7 +1,6 @@
-//-----MANAGE LOGIC AND FUNCTIONALITY OF ROUTES  
-var ObjectId = require('mongodb').ObjectId;
-var dbconn = require('../data/dbconnection.js');
-var hotelData = require('../data/hotel-data.json');
+//-----MANAGE LOGIC AND FUNCTIONALITY OF ROUTES
+var mongoose = require('mongoose');
+var Hotel = mongoose.model('Hotel');
 
 //--GET ALL HOTELS (subset/paginated)
 module.exports.hotelsGetAll = function (req, res) {
@@ -76,7 +75,7 @@ module.exports.hotelsAddOne = function (req, res) {
             console.log(response.ops);
             res
                 .status(201)
-                .json(response.ops)
+                .json(response.ops) //ops shows object created
         });
     } else {
         console.log("Data missing from body");
