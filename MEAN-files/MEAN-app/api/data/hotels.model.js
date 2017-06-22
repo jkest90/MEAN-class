@@ -1,6 +1,8 @@
+// A schema is the Mongoose model that represents, and is the entry-point into a collection in our database. In our 'meanhotel' DB collection 'hotels', we have our JSON hotel data. By defining a schema, we tell the application the type of data we have in each document, ultimately providing a representation of this JSON data which we can then retrieve in whichever manner we please within our controller. ALL of the interaction with our data is done through the model. 
+
 var mongoose = require('mongoose');
 
-//--DEFINE SCHEMA FOR SUB-DOCUMENTS (nested documents)
+//-----DEFINE SCHEMA FOR SUB-DOCUMENTS (nested documents)
 
 var reviewSchema = new mongoose.Schema({
     name : {
@@ -31,7 +33,7 @@ var roomSchema = new mongoose.Schema({
     price : Number
 });
 
-//--DEFINE HOTEL SCHEMA
+//-----DEFINE HOTEL SCHEMA
 // types: String, Number, Boolean, Dates, Buffer (binary data), Object ID, Mixed (any data type), Array
 
 var hotelSchema = new mongoose.Schema({
@@ -65,7 +67,7 @@ var hotelSchema = new mongoose.Schema({
     }
 });
 
-//--COMPILE MODEL FROM SCHEMA 
+//-----COMPILE MODEL FROM SCHEMA. 
 
 // 1st param: Name of model
 // 2nd param: Name of schema

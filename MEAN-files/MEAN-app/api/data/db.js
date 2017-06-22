@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var dburl = 'mongodb://localhost:27017/meanhotel';
 
-//--SETUP MONGOOSE CONNECTION PROCESSES/CONSOLE LOGS
+//-----SETUP MONGOOSE CONNECTION PROCESSES/CONSOLE LOGS
 mongoose.connect(dburl);
 
 mongoose.connection.on('connected', function () {
